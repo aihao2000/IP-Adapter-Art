@@ -34,7 +34,7 @@ pip install git+https://github.com/aihao2000/IP-Adapter-Artist.git
 
 ```
 @misc{IP-Adapter-Artist,
-  author = {Hao Ai},
+  author = {Hao Ai, Xiaosai Zhang},
   title = {IP Adapter Artist},
   year = {2024},
   publisher = {GitHub},
