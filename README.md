@@ -33,7 +33,7 @@ pip install git+https://github.com/aihao2000/IP-Adapter-Art.git
 ## Citation
 
 ```
-@misc{IP-Adapter-Art,
+@misc{ipadapterart,
   author = {Hao Ai, Xiaosai Zhang},
   title = {IP Adapter Art},
   year = {2024},
