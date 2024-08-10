@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name="ip_adapter_artist",
+    name="ip_adapter_art",
     version="0.1",
     description="Using reference images to control style in diffusion models",
     long_description=open("README.md", "r", encoding="utf-8").read(),
@@ -11,7 +11,7 @@ setup(
     license="Apache",
     author="aihao",
     author_email="aihao2000@outlook.com",
-    url="https://github.com/aihao2000/IP-Adapter-Artist",
+    url="https://github.com/aihao2000/IP-Adapter-Art",
     packages=find_packages(),
     python_requires=">=3.8.0",
     install_requires=[
