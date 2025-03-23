@@ -132,7 +132,7 @@ with gr.Blocks(delete_cache=(3600, 3600)) as demo:
     - Stylized Portrait Generation: Upload the style reference image and ID reference image, and click "Generation" to generate the artistic portrait directly.
     - Text-guided Stylization Generation: Set ID Scale to 0, modify prompt, and then try text-guided stylized image generation through **Art-Adapter**. **(Note that ID image cannot be empty in the current version.)**
     
-    _If the style similarity is low, try increasing the Artify ControlNet Scale, or set the Controlnet Scale to 0._
+    _If the style similarity is low, try increasing the Stylize Contorlnet Scale, or set the Controlnet Scale to 0._
     
     ## News
     
@@ -165,8 +165,8 @@ with gr.Blocks(delete_cache=(3600, 3600)) as demo:
                 controlnet_scale = gr.Number(
                     label="ControlNet Scale", value=0.9, step=0.1
                 )
-                artify_contorlnet_scale = gr.Number(
-                    label="Artify ControlNet Scale", value=0.0, step=0.1
+                stylize_contorlnet_scale = gr.Number(
+                    label="Stylize ControlNet Scale", value=0.0, step=0.1
                 )
                 guidance_scale = gr.Number(label="CFG Scale", value=7.0, step=0.1)
             with gr.Row():
@@ -214,7 +214,7 @@ with gr.Blocks(delete_cache=(3600, 3600)) as demo:
             seed,
             height,
             width,
-            artify_contorlnet_scale,
+            stylize_contorlnet_scale,
         ],
         outputs=[output],
         api_name="artistic_portrait_gen",
