@@ -124,7 +124,7 @@ def generation(
 with gr.Blocks(delete_cache=(3600, 3600)) as demo:
     gr.Markdown(
         """
-    # Artistic Portrait Gen 0.9: Generate Customized Artistic Portrait through Style Reference Images
+    # Artistic Portrait Generation 0.9: Generate Customized Artistic Portrait through Style Reference Images
     
     **Implementation based on [Art-Adapter](https://github.com/aihao2000/IP-Adapter-Art), [PuLID-Adapter](https://github.com/ToTheBeginning/PuLID), and [Instant Style](https://github.com/instantX-research/InstantStyle).**
     
@@ -136,7 +136,7 @@ with gr.Blocks(delete_cache=(3600, 3600)) as demo:
     
     ## News
     
-    - 2025.3.24: We released Artistic Portrait Gen 0.9.
+    - 2025.3.24: We released Artistic Portrait Generation 0.9.
     """
     )
     with gr.Row():
