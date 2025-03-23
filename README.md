@@ -1,3 +1,20 @@
+---
+title: Artistic Portrait Generation
+emoji: 🎨
+colorFrom: yellow
+colorTo: gray
+sdk: gradio
+sdk_version: 5.22.0
+app_file: app.py
+pinned: true
+license: apache-2.0
+models:
+- AisingioroHao0/IP-Adapter-Art
+- guozinan/PuLID
+- stabilityai/stable-diffusion-xl-refiner-1.0
+- xinsir/controlnet-openpose-sdxl-1.0
+---
+
 # IP Adapter Art：
 
 <a href='https://huggingface.co/AisingioroHao0/IP-Adapter-Art'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a><a href=''><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue'></a> [![**IP Adapter Art Demo**](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1kV7q3Gzr8GPG9cChdDQ5ncCx84TYjuu3?usp=sharing)
