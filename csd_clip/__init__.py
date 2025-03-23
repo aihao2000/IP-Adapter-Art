@@ -5,6 +5,7 @@ import copy
 from torch.autograd import Function
 
 from collections import OrderedDict
+from torchvision import transforms
 
 
 def convert_state_dict(state_dict):
@@ -94,7 +95,7 @@ class CSD_CLIP(nn.Module):
         self.content_proj_head = content_proj_head
         if name == "vit_large":
             if model_path is None:
-                clipmodel, _ = clip.load("models/ViT-L-14.pt")
+                clipmodel, _ = clip.load("ViT-L/14")
             else:
                 clipmodel, _ = clip.load(model_path)
             self.backbone = clipmodel.visual
@@ -143,3 +144,29 @@ class CSD_CLIP(nn.Module):
             content_output = reverse_feature @ self.last_layer_content
         content_output = nn.functional.normalize(content_output, dim=1, p=2)
         return feature, content_output, style_output
+
+
+def create_model_and_transforms(model_path="models/csd_clip.pth"):
+    # init model
+    model = CSD_CLIP("vit_large", "default")
+
+    # load model
+    checkpoint = torch.load(model_path, map_location="cpu")
+    state_dict = convert_state_dict(checkpoint["model_state_dict"])
+    model.load_state_dict(state_dict, strict=False)
+
+    # normalization
+    normalize = transforms.Normalize(
+        (0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)
+    )
+    preprocess = transforms.Compose(
+        [
+            transforms.Resize(
+                size=224, interpolation=transforms.functional.InterpolationMode.BICUBIC
+            ),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            normalize,
+        ]
+    )
+    return model, preprocess, preprocess
