@@ -1,6 +1,5 @@
 torch==2.5.1
 timm==1.0.11
-deepspeed==0.14.4
 accelerate==0.34.2
 optimum-quanto
 datasets
@@ -13,12 +12,9 @@ matplotlib
 onnxruntime-gpu==1.17
 timm
 ftfy
-xformers==0.0.28.post3
 peft
 open_clip_torch
-tensorboard
 einops
-datasets
 jupyter
 ipykernel
 ipywidgets
